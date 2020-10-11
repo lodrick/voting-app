@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <!--<ion-button color="duck" (click)="dismissRegister()">Close</ion-button>-->
+    <ion-buttons color="light" (click)="dismissRegister()" slot="start">
+      <ion-back-button defaultHref="landing">
+        <i class="button button-icon my-back-button"></i>
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title >Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="register(form)" method="post">
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input type="text" ngModel name="fname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input type="text" ngModel name="lname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <!--(ionChange)="GetSelected(gender); [ngModelOptions]="{standalone: true}" -->
+      <ion-select name="gender" [(ngModel)]="gender" placeholder="Select Gender">
+        <ion-select-option *ngFor="let gender of genders">{{gender}}</ion-select-option>
+        <!--<ion-select-option value = "male">Male</ion-select-option>
+        <ion-select-option value = "other">Other</ion-select-option>-->
+      </ion-select>
+    </ion-item>    
+
+    <ion-item>
+      <ion-label position="floating">Age</ion-label>
+      <ion-input type="text" ngModel name="age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input text="text" ngModel name="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" ngModel name="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" ngModel name="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Security Question</ion-label>
+      <ion-input type="text" ngModel name="securityQuestion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Security Answer</ion-label>
+      <ion-input type="text" ngModel name="securityAnswer"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="full" color="danger">Sign Up</ion-button>
+  </form>
+
+  <p text-center>Already have a account? <a (click)="loginModal()">Login.</a> </p>
+  <!--<ion-button expand="full" color="primary" (click)="loginModal()">Login</ion-button>-->
+</ion-content>
+

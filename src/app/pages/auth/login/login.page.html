@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" (click)="dismissLogin()" slot="start">
+      <ion-back-button defaultHref="landing">
+        <i class="button button-icon my-back-button"></i>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contents">
+  
+    <form #form="ngForm" (ngSubmit)="login(form)" method="post">
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input ngModel type="text" name="username"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input ngModel type="password" name="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+      <p text-right>Forgot Password?</p>
+    
+      <ion-button type="submit" expand="block" color="primary">
+        Login
+      </ion-button>
+      
+    </form>
+    <p>Don't have a account? <a (click)="registerModal()">Sign Up.</a></p>
+
+  <!--<ion-button expand="full" color="danger" (click)="registerModal()">Register</ion-button>
+  <p text-center>Don't have a account?</p>-->
+</ion-content>

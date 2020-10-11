@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>CANDIDATES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">SELECT TO VOTE</ion-item-divider>
+      <ion-item button *ngFor="let candidate of candidates; let i = index;" (click)="presentprompt(i)">
+        <ion-avatar slot="start" class="avatar">
+          <ion-img src="assets/icon/jkr.jpg" alt="avatar"></ion-img>
+        </ion-avatar>
+        
+        <h2>{{candidate.name}}</h2>
+        <h3>{{candidate.partyName}}</h3>
+        <p>{{candidate.partyName}}</p>
+      </ion-item>
+    </ion-item-group>
+
+    
+
+    <!--<ion-item>
+      <ion-label>Mega Man X</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>The Legends of Zelda</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Super Mario World</ion-label>
+    </ion-item>-->
+  </ion-list>
+
+  <!--<div *ngIf="user != undefined">
+    Welcome {{user["first_name"]}} {{user["last_name"]}}
+  </div>-->
+</ion-content>
